@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Batch 2025-26 — Our Class Website</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS (after Bootstrap) -->
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-mortarboard-fill me-2"></i>BCA 2025-26
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#hero">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faculty">Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#timetable">Timetable</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">FAQ</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Syllabus PDF</a></li>
+              <li><a class="dropdown-item" href="#">Previous Year Papers</a></li>
+              <li><a class="dropdown-item" href="#">Study Material</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">University Portal</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <!-- Dark Mode Toggle -->
+          <button class="btn btn-outline-light btn-sm" id="darkModeToggle" title="Toggle Dark Mode"
+            data-bs-toggle="tooltip" data-bs-placement="bottom">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Login Button -->
+          <button class="btn btn-warning btn-sm" id="loginBtn" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <i class="bi bi-box-arrow-in-right me-1"></i>Login
+          </button>
+
+          <!-- Logged-in User (hidden by default) -->
+          <div class="d-none" id="userInfo">
+            <span class="text-light me-2" id="userName"></span>
+            <button class="btn btn-outline-danger btn-sm" id="logoutBtn">
+              <i class="bi bi-box-arrow-right me-1"></i>Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================
+         HERO SECTION — Bootstrap Carousel
+         ============================================ -->
+    <section id="hero">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/1200/500?random=100" class="d-block w-100" alt="Campus View">
+            <div class="carousel-caption">
+              <h1 class="display-4 fw-bold">Welcome to BCA 2025-26</h1>
+              <p class="lead">Mandsaur University — Department of Computer Applications</p>
+              <a href="#about" class="btn btn-warning btn-lg mt-2">Explore Our Department</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/1200/500?random=101" class="d-block w-100" alt="Computer Lab">
+            <div class="carousel-caption">
+              <h1 class="display-4 fw-bold">State-of-the-Art Labs</h1>
+              <p class="lead">Modern computer labs equipped with the latest technology</p>
+              <a href="#gallery" class="btn btn-warning btn-lg mt-2">View Gallery</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/1200/500?random=102" class="d-block w-100" alt="Students">
+            <div class="carousel-caption">
+              <h1 class="display-4 fw-bold">Shape Your Future</h1>
+              <p class="lead">Learn from industry experts and build real-world skills</p>
+              <a href="#contact" class="btn btn-warning btn-lg mt-2">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT OUR DEPARTMENT
+         ============================================ -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5">
+          <i class="bi bi-info-circle me-2"></i>About Our Department
+        </h2>
+
+        <!-- Two-column layout -->
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h3 class="fw-bold">Department of Computer Applications</h3>
+            <p class="text-muted">
+              The BCA programme at Mandsaur University is designed to provide students with a strong
+              foundation in computer science, programming, and modern web technologies. Our curriculum
+              blends theoretical knowledge with hands-on practical training, preparing graduates for
+              the ever-evolving IT industry.
+            </p>
+            <p class="text-muted">
+              Established in 2010, our department has grown into one of the most sought-after programmes
+              in central India. With experienced faculty, well-equipped labs, and industry collaborations,
+              we ensure every student is career-ready upon graduation.
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>NAAC Accredited University</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>100+ Placed Students Every Year</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Industry-Aligned Curriculum</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Dedicated Placement Cell</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="https://picsum.photos/500/350?random=103" class="img-fluid rounded shadow"
+              alt="Department Building">
+          </div>
+        </div>
+
+        <!-- Info Cards: Vision, Mission, Values -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <article class="card h-100 text-center border-0 shadow-sm info-card">
+              <div class="card-body">
+                <i class="bi bi-eye-fill display-4 text-primary mb-3"></i>
+                <h5 class="card-title fw-bold">Our Vision</h5>
+                <p class="card-text text-muted">
+                  To be a centre of excellence in computer education, producing innovative and
+                  ethically responsible IT professionals who contribute to national development.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 text-center border-0 shadow-sm info-card">
+              <div class="card-body">
+                <i class="bi bi-bullseye display-4 text-success mb-3"></i>
+                <h5 class="card-title fw-bold">Our Mission</h5>
+                <p class="card-text text-muted">
+                  To deliver quality education through innovative teaching, practical exposure,
+                  and continuous skill development aligned with industry requirements.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 text-center border-0 shadow-sm info-card">
+              <div class="card-body">
+                <i class="bi bi-heart-fill display-4 text-danger mb-3"></i>
+                <h5 class="card-title fw-bold">Our Values</h5>
+                <p class="card-text text-muted">
+                  Integrity, innovation, inclusivity, and a commitment to nurturing
+                  well-rounded individuals ready to face global challenges.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FACULTY & STAFF
+         ============================================ -->
+    <section id="faculty" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-2">
+          <i class="bi bi-people-fill me-2"></i>Faculty &amp; Staff
+        </h2>
+        <p class="text-center text-muted mb-5">
+          Meet the dedicated educators guiding BCA 2025-26
+          <span class="badge bg-primary ms-2" id="expandedCount" data-bs-toggle="tooltip"
+            title="Faculty bios expanded">0 expanded</span>
+        </p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Faculty 1 -->
+          <div class="col">
+            <article class="card h-100 faculty-card shadow-sm">
+              <img src="https://picsum.photos/400/300?random=201" class="card-img-top" alt="Prof. Rajesh Sharma">
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Prof. Rajesh Sharma</h5>
+                <p class="text-muted mb-1">HOD — Computer Science</p>
+                <span class="badge bg-warning text-dark mb-3" data-bs-toggle="tooltip"
+                  title="Head of Department">HOD</span>
+                <p class="faculty-detail d-none">
+                  Prof. Sharma holds a Ph.D. in Computer Science from IIT Delhi and has 18 years of
+                  teaching experience. His research interests include Artificial Intelligence and
+                  Machine Learning. He has published 25+ papers in international journals.
+                </p>
+                <button class="btn btn-outline-primary btn-sm read-more-btn">Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 2 -->
+          <div class="col">
+            <article class="card h-100 faculty-card shadow-sm">
+              <img src="https://picsum.photos/400/300?random=202" class="card-img-top" alt="Dr. Priya Patel">
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Dr. Priya Patel</h5>
+                <p class="text-muted mb-1">Web Technology</p>
+                <span class="badge bg-info text-dark mb-3" data-bs-toggle="tooltip"
+                  title="Web Development Expert">Web Tech</span>
+                <p class="faculty-detail d-none">
+                  Dr. Patel specializes in modern web technologies, including HTML5, CSS3, JavaScript,
+                  and full-stack development. She has conducted multiple workshops on Bootstrap and
+                  React.js. Previously worked at TCS for 5 years.
+                </p>
+                <button class="btn btn-outline-primary btn-sm read-more-btn">Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 3 -->
+          <div class="col">
+            <article class="card h-100 faculty-card shadow-sm">
+              <img src="https://picsum.photos/400/300?random=203" class="card-img-top" alt="Prof. Amit Kumar">
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Prof. Amit Kumar</h5>
+                <p class="text-muted mb-1">Database Systems</p>
+                <span class="badge bg-success mb-3" data-bs-toggle="tooltip"
+                  title="Database Management Specialist">DBMS</span>
+                <p class="faculty-detail d-none">
+                  Prof. Kumar is an expert in relational and NoSQL databases. He has authored a textbook
+                  on Database Management Systems widely used across universities in Madhya Pradesh.
+                  He guides students in projects involving MySQL and MongoDB.
+                </p>
+                <button class="btn btn-outline-primary btn-sm read-more-btn">Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 4 -->
+          <div class="col">
+            <article class="card h-100 faculty-card shadow-sm">
+              <img src="https://picsum.photos/400/300?random=204" class="card-img-top" alt="Dr. Sneha Joshi">
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Dr. Sneha Joshi</h5>
+                <p class="text-muted mb-1">Software Engineering</p>
+                <span class="badge bg-secondary mb-3" data-bs-toggle="tooltip"
+                  title="Software Engineering & SDLC">SE</span>
+                <p class="faculty-detail d-none">
+                  Dr. Joshi has a rich background in software engineering methodologies, including Agile
+                  and DevOps practices. She has mentored 50+ student projects and has industry experience
+                  with Infosys and Wipro.
+                </p>
+                <button class="btn btn-outline-primary btn-sm read-more-btn">Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 5 -->
+          <div class="col">
+            <article class="card h-100 faculty-card shadow-sm">
+              <img src="https://picsum.photos/400/300?random=205" class="card-img-top" alt="Prof. Vikram Singh">
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Prof. Vikram Singh</h5>
+                <p class="text-muted mb-1">Networking</p>
+                <span class="badge bg-danger mb-3" data-bs-toggle="tooltip"
+                  title="Computer Networks & Security">Networks</span>
+                <p class="faculty-detail d-none">
+                  Prof. Singh is a certified Cisco instructor (CCNA, CCNP) with expertise in computer
+                  networks and cybersecurity. He manages the university's network lab and conducts
+                  regular workshops on ethical hacking.
+                </p>
+                <button class="btn btn-outline-primary btn-sm read-more-btn">Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 6 -->
+          <div class="col">
+            <article class="card h-100 faculty-card shadow-sm">
+              <img src="https://picsum.photos/400/300?random=206" class="card-img-top" alt="Dr. Meena Gupta">
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Dr. Meena Gupta</h5>
+                <p class="text-muted mb-1">Mathematics</p>
+                <span class="badge bg-dark mb-3" data-bs-toggle="tooltip"
+                  title="Discrete Maths & Statistics">Maths</span>
+                <p class="faculty-detail d-none">
+                  Dr. Gupta holds a Ph.D. in Applied Mathematics and has been teaching Discrete Mathematics
+                  and Statistics for BCA students for over 12 years. She is known for making complex
+                  mathematical concepts easy to understand.
+                </p>
+                <button class="btn btn-outline-primary btn-sm read-more-btn">Read More</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CLASS TIMETABLE
+         ============================================ -->
+    <section id="timetable" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-2">
+          <i class="bi bi-calendar-week me-2"></i>Class Timetable
+        </h2>
+        <p class="text-center text-muted mb-4">BCA Semester II — Weekly Schedule</p>
+
+        <!-- Today's Classes Summary -->
+        <div class="alert alert-info text-center mb-4" id="todayClasses">
+          <i class="bi bi-clock me-1"></i> <strong>Today's Classes:</strong>
+          <span id="todaySummary">Loading...</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover table-bordered text-center align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th>Day</th>
+                <th>9:00–10:00</th>
+                <th>10:00–11:00</th>
+                <th>11:00–12:00</th>
+                <th>12:00–1:00</th>
+                <th>1:00–2:00</th>
+                <th>2:00–3:00</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-day="Monday">
+                <td class="fw-bold">Monday</td>
+                <td>Web Technology</td>
+                <td>Data Structures</td>
+                <td>Mathematics-II</td>
+                <td class="table-warning">Lunch Break</td>
+                <td>DBMS Lab</td>
+                <td>DBMS Lab</td>
+              </tr>
+              <tr data-day="Tuesday">
+                <td class="fw-bold">Tuesday</td>
+                <td>Data Structures</td>
+                <td>Operating Systems</td>
+                <td>Web Technology</td>
+                <td class="table-warning">Lunch Break</td>
+                <td>Web Tech Lab</td>
+                <td>Web Tech Lab</td>
+              </tr>
+              <tr data-day="Wednesday">
+                <td class="fw-bold">Wednesday</td>
+                <td>DBMS</td>
+                <td>Mathematics-II</td>
+                <td>Operating Systems</td>
+                <td class="table-warning">Lunch Break</td>
+                <td>DS Lab</td>
+                <td>DS Lab</td>
+              </tr>
+              <tr data-day="Thursday">
+                <td class="fw-bold">Thursday</td>
+                <td>Mathematics-II</td>
+                <td>Web Technology</td>
+                <td>Data Structures</td>
+                <td class="table-warning">Lunch Break</td>
+                <td>DBMS Lab</td>
+                <td>DBMS Lab</td>
+              </tr>
+              <tr data-day="Friday">
+                <td class="fw-bold">Friday</td>
+                <td>Operating Systems</td>
+                <td>DBMS</td>
+                <td>Web Technology</td>
+                <td class="table-warning">Lunch Break</td>
+                <td>Web Tech Lab</td>
+                <td>Web Tech Lab</td>
+              </tr>
+              <tr data-day="Saturday">
+                <td class="fw-bold">Saturday</td>
+                <td>Data Structures</td>
+                <td>Mathematics-II</td>
+                <td>Library / Self Study</td>
+                <td class="table-warning">Lunch Break</td>
+                <td colspan="2" class="table-success">Sports / Extra-Curricular</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PHOTO GALLERY
+         ============================================ -->
+    <section id="gallery" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5">
+          <i class="bi bi-images me-2"></i>Photo Gallery
+        </h2>
+
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=1" class="img-fluid rounded gallery-img"
+                alt="Campus Main Gate" data-caption="Campus Main Gate">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=2" class="img-fluid rounded gallery-img"
+                alt="Computer Lab" data-caption="Computer Lab — Hands-on Learning">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=3" class="img-fluid rounded gallery-img"
+                alt="Library" data-caption="Central Library">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=4" class="img-fluid rounded gallery-img"
+                alt="Classroom" data-caption="Smart Classroom">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=5" class="img-fluid rounded gallery-img"
+                alt="Seminar Hall" data-caption="Seminar Hall — Guest Lectures">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=6" class="img-fluid rounded gallery-img"
+                alt="Sports Ground" data-caption="Sports Ground">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=7" class="img-fluid rounded gallery-img"
+                alt="Annual Function" data-caption="Annual Function 2025">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=8" class="img-fluid rounded gallery-img"
+                alt="Workshop" data-caption="Web Development Workshop">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=9" class="img-fluid rounded gallery-img"
+                alt="Placement Drive" data-caption="Campus Placement Drive">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=10" class="img-fluid rounded gallery-img"
+                alt="Canteen" data-caption="University Canteen">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=11" class="img-fluid rounded gallery-img"
+                alt="Hostel" data-caption="Student Hostel">
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="gallery-item mb-0">
+              <img src="https://picsum.photos/400/300?random=12" class="img-fluid rounded gallery-img"
+                alt="Farewell" data-caption="Farewell Ceremony 2025">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Lightbox Modal -->
+      <div class="modal fade" id="galleryModal" tabindex="-1" aria-label="Gallery Lightbox" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content bg-dark text-white">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="galleryCaption">Image</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center p-0">
+              <img src="" class="img-fluid" id="galleryModalImg" alt="Gallery Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT / FEEDBACK FORM
+         ============================================ -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5">
+          <i class="bi bi-envelope-fill me-2"></i>Contact &amp; Feedback
+        </h2>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <!-- Name -->
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="formName" placeholder="Full Name" required
+                      minlength="2">
+                    <label for="formName">Full Name</label>
+                    <div class="invalid-feedback">Please enter your full name (at least 2 characters).</div>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="formEmail" placeholder="Email" required>
+                    <label for="formEmail">Email Address</label>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="tel" class="form-control" id="formPhone" placeholder="Phone" required
+                      pattern="^(\+91[\-\s]?)?[6-9]\d{9}$">
+                    <label for="formPhone">Phone (+91)</label>
+                    <div class="invalid-feedback">Enter a valid Indian phone number (e.g., +91 9876543210).</div>
+                  </div>
+                </div>
+
+                <!-- Subject Dropdown -->
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <select class="form-select" id="formSubject" required>
+                      <option value="" selected disabled>Choose...</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Admission Query">Admission Query</option>
+                      <option value="Feedback">Feedback</option>
+                      <option value="Complaint">Complaint</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <label for="formSubject">Subject</label>
+                    <div class="invalid-feedback">Please select a subject.</div>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" id="formMessage" placeholder="Message" style="height: 120px"
+                      required minlength="10"></textarea>
+                    <label for="formMessage">Your Message</label>
+                    <div class="invalid-feedback">Please enter at least 10 characters.</div>
+                  </div>
+                </div>
+
+                <!-- Gender Radio -->
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Gender</label>
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male"
+                        required>
+                      <label class="form-check-label" for="genderMale">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female">
+                      <label class="form-check-label" for="genderFemale">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="genderOther" value="Other">
+                      <label class="form-check-label" for="genderOther">Other</label>
+                    </div>
+                    <div class="invalid-feedback">Please select your gender.</div>
+                  </div>
+                </div>
+
+                <!-- Interests Checkboxes -->
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Interests</label>
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="intWebDev" value="Web Development">
+                      <label class="form-check-label" for="intWebDev">Web Dev</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="intDB" value="Database">
+                      <label class="form-check-label" for="intDB">Database</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="intNetwork" value="Networking">
+                      <label class="form-check-label" for="intNetwork">Networking</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="intAI" value="AI/ML">
+                      <label class="form-check-label" for="intAI">AI/ML</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Agree Checkbox -->
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="formAgree" required>
+                    <label class="form-check-label" for="formAgree">
+                      I agree that the information provided is correct and consent to being contacted.
+                    </label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary btn-lg px-5">
+                    <i class="bi bi-send me-2"></i>Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Success Alert (hidden) -->
+            <div class="alert alert-success mt-4 d-none" id="formSuccess">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              Thank you! Your message has been saved successfully.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         LOGIN MODAL
+         ============================================ -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="loginModalLabel">
+              <i class="bi bi-shield-lock me-2"></i>Admin Login
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-danger d-none" id="loginError">
+              <i class="bi bi-exclamation-triangle me-1"></i>Invalid email or password.
+            </div>
+            <div class="alert alert-success d-none" id="loginSuccess">
+              <i class="bi bi-check-circle me-1"></i>Login successful! Redirecting...
+            </div>
+            <form id="loginForm">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="loginEmail" placeholder="Email" required>
+                <label for="loginEmail">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                <label for="loginPassword">Password</label>
+              </div>
+              <p class="text-muted small">
+                <i class="bi bi-info-circle me-1"></i>Default: admin@bca.mu / bca2025
+              </p>
+              <button type="submit" class="btn btn-primary w-100">
+                <i class="bi bi-box-arrow-in-right me-2"></i>Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         ADMIN MESSAGES SECTION (hidden by default)
+         ============================================ -->
+    <section id="adminMessages" class="py-5 bg-light d-none">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4">
+          <i class="bi bi-chat-left-text me-2"></i>Contact Messages (Admin)
+        </h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="list-group" id="messagesList">
+              <p class="text-muted text-center">No messages yet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FAQ ACCORDION
+         ============================================ -->
+    <section id="faq" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5">
+          <i class="bi bi-question-circle me-2"></i>Frequently Asked Questions
+        </h2>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <!-- FAQ 1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                    What is the duration of the BCA programme?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    The Bachelor of Computer Applications (BCA) programme at Mandsaur University is a
+                    <strong>3-year undergraduate degree</strong> divided into 6 semesters. Each semester
+                    includes theory subjects, practical labs, and internal assessments.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                    What are the eligibility criteria for BCA admission?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Candidates must have passed 10+2 (or equivalent) from a recognised board with
+                    <strong>Mathematics or Computer Science</strong> as one of the subjects, with a
+                    minimum of 45% aggregate marks (40% for reserved categories).
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    What subjects are taught in Semester II?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Semester II covers: <strong>Data Structures, Web Technology, Database Management Systems (DBMS),
+                    Operating Systems, and Mathematics-II</strong>. Each subject has corresponding practical labs.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                    Is there a placement cell at the university?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes! Mandsaur University has a <strong>dedicated Training &amp; Placement Cell</strong>
+                    that organises campus drives, mock interviews, resume-building workshops, and industry
+                    visits. Top recruiters include TCS, Infosys, Wipro, and Tech Mahindra.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                    What programming languages will I learn?
+                  </button>
+                </h3>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    During the BCA programme, you will learn <strong>C, C++, Java, Python, HTML/CSS/JavaScript,
+                    SQL</strong>, and more. The curriculum is updated regularly to include trending technologies.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 6 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                    Are hostel facilities available?
+                  </button>
+                </h3>
+                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes, separate hostel facilities are available for boys and girls within the campus.
+                    Hostels are equipped with Wi-Fi, mess, laundry, and 24/7 security. The annual
+                    hostel fee is approximately ₹45,000 – ₹60,000.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 7 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                    Can I pursue MCA after BCA?
+                  </button>
+                </h3>
+                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Absolutely! BCA graduates are eligible to pursue <strong>MCA (Master of Computer
+                    Applications)</strong>, MBA, or other postgraduate programmes. Many students also
+                    opt for specialised certifications in cloud computing, data science, or cybersecurity.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 8 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                    What is the fee structure?
+                  </button>
+                </h3>
+                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    The annual tuition fee for BCA is approximately <strong>₹35,000 – ₹50,000</strong>
+                    depending on the category. Scholarships are available for meritorious students and
+                    those from economically weaker sections. Contact the admission office for details.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 9 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                    Are there extracurricular activities?
+                  </button>
+                </h3>
+                <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    The university organises various events including <strong>hackathons, coding contests,
+                    tech fests, cultural programmes, and sports tournaments</strong>. There are also
+                    active clubs for coding, robotics, photography, and debating.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 10 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                    How can I contact the department?
+                  </button>
+                </h3>
+                <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    You can reach us via email at <strong>bca@mfrmu.ac.in</strong>, call us at
+                    <strong>+91 7422-252456</strong>, or visit the Department of Computer Applications
+                    on the 2nd floor of the IT Block, Mandsaur University campus.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COUNTDOWN TIMER
+         ============================================ -->
+    <section id="countdown" class="py-5 bg-dark text-white text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-4">
+          <i class="bi bi-hourglass-split me-2"></i>Days Until Semester Exam
+        </h2>
+        <div class="d-flex justify-content-center gap-3 flex-wrap" id="countdownTimer">
+          <div class="countdown-box">
+            <span class="countdown-number" id="cdDays">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="cdHours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="cdMinutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="cdSeconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+        <p class="mt-3 text-muted">Exam Date: December 15, 2026</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Quick Links -->
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3"><i class="bi bi-link-45deg me-2"></i>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#about" class="text-white-50 text-decoration-none">About Department</a></li>
+            <li class="mb-2"><a href="#faculty" class="text-white-50 text-decoration-none">Faculty &amp; Staff</a></li>
+            <li class="mb-2"><a href="#timetable" class="text-white-50 text-decoration-none">Class Timetable</a></li>
+            <li class="mb-2"><a href="#gallery" class="text-white-50 text-decoration-none">Photo Gallery</a></li>
+            <li class="mb-2"><a href="#contact" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li class="mb-2"><a href="#faq" class="text-white-50 text-decoration-none">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3"><i class="bi bi-geo-alt-fill me-2"></i>Contact Info</h5>
+          <ul class="list-unstyled text-white-50">
+            <li class="mb-2">
+              <i class="bi bi-building me-2"></i>Mandsaur University, Mandsaur, MP — 458001
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-telephone me-2"></i>+91 7422-252456
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-envelope me-2"></i>bca@mfrmu.ac.in
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-clock me-2"></i>Mon–Sat: 9:00 AM – 5:00 PM
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3"><i class="bi bi-share-fill me-2"></i>Follow Us</h5>
+          <div class="d-flex gap-3 mb-3">
+            <a href="#" class="text-white fs-4" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white fs-4" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white fs-4" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white fs-4" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white fs-4" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <p class="text-white-50 small">
+            Stay connected with BCA 2025-26 on social media for latest updates, events, and
+            placement news.
+          </p>
+        </div>
+      </div>
+
+      <hr class="my-4 border-secondary">
+      <p class="text-center text-white-50 mb-0">
+        &copy; 2025 BCA Batch 2025-26 | Mandsaur University. Built with
+        <i class="bi bi-heart-fill text-danger"></i> using Bootstrap 5.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK TO TOP BUTTON
+       ============================================ -->
+  <button class="btn btn-primary back-to-top" id="backToTop" aria-label="Back to top"
+    data-bs-toggle="tooltip" data-bs-placement="left" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ============================================
+       WELCOME TOAST
+       ============================================ -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast" id="welcomeToast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-primary text-white">
+        <i class="bi bi-mortarboard-fill me-2"></i>
+        <strong class="me-auto">Welcome!</strong>
+        <small>just now</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        👋 Welcome to the <strong>BCA 2025-26</strong> class website! Explore our department,
+        meet the faculty, and stay updated.
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.2 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+/* ========================================
+   BCA Batch 2025-26 — Custom Theme
+   ======================================== */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --clr-primary: #0d6efd;
+  --clr-secondary: #6c757d;
+  --clr-accent: #ffc107;
+  --clr-success: #198754;
+  --clr-danger: #dc3545;
+  --clr-text: #212529;
+  --clr-text-muted: #6c757d;
+  --clr-bg: #ffffff;
+  --clr-bg-light: #f8f9fa;
+  --clr-bg-dark: #212529;
+  --clr-card-bg: #ffffff;
+  --clr-shadow: rgba(0, 0, 0, 0.1);
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --navbar-height: 56px;
+}
+
+/* ---------- Base Styles ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+}
+
+.navbar .nav-link {
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--clr-accent);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ---------- Hero / Carousel ---------- */
+#hero {
+  padding: 0;
+  margin-top: var(--navbar-height);
+}
+
+.carousel-item {
+  position: relative;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  min-height: 350px;
+}
+
+.carousel-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.carousel-caption {
+  z-index: 2;
+  bottom: 15%;
+}
+
+.carousel-caption h1 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- About Section ---------- */
+#about img {
+  border-radius: 0.5rem;
+}
+
+/* ---------- Info Cards (Vision / Mission / Values) ---------- */
+.info-card {
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px var(--clr-shadow);
+}
+
+/* ---------- Faculty Cards ---------- */
+.faculty-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--clr-shadow);
+}
+
+.faculty-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.faculty-detail {
+  font-size: 0.9rem;
+  text-align: left;
+  margin-top: 0.5rem;
+  color: var(--clr-text-muted);
+}
+
+/* ---------- Timetable ---------- */
+#timetable .table {
+  font-size: 0.9rem;
+}
+
+.highlight-today {
+  background-color: rgba(13, 110, 253, 0.12) !important;
+}
+
+.highlight-today td {
+  font-weight: 600;
+}
+
+/* ---------- Gallery ---------- */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.gallery-img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.08);
+  filter: brightness(1.15);
+}
+
+/* ---------- Contact Form ---------- */
+#contactForm .form-floating > .form-control:focus,
+#contactForm .form-floating > .form-select:focus {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* ---------- Footer ---------- */
+footer a:hover {
+  color: var(--clr-accent) !important;
+  text-decoration: underline !important;
+}
+
+/* ---------- Back-to-Top Button ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 1050;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- Countdown Timer ---------- */
+.countdown-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  min-width: 100px;
+  text-align: center;
+}
+
+.countdown-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+}
+
+/* ---------- Toast Positioning ---------- */
+.toast-container {
+  z-index: 1100;
+}
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+body.dark-mode {
+  --clr-text: #e0e0e0;
+  --clr-bg: #1a1a2e;
+  --clr-bg-light: #16213e;
+  --clr-card-bg: #1f2940;
+  --clr-shadow: rgba(0, 0, 0, 0.4);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+}
+
+body.dark-mode .bg-light {
+  background-color: var(--clr-bg-light) !important;
+}
+
+body.dark-mode .card {
+  background-color: var(--clr-card-bg);
+  color: var(--clr-text);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card .text-muted,
+body.dark-mode .text-muted {
+  color: #a0a0b0 !important;
+}
+
+body.dark-mode .table {
+  color: var(--clr-text);
+  --bs-table-bg: var(--clr-bg);
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .table-warning {
+  --bs-table-bg: rgba(255, 193, 7, 0.15);
+  color: var(--clr-text);
+}
+
+body.dark-mode .table-success {
+  --bs-table-bg: rgba(25, 135, 84, 0.15);
+  color: var(--clr-text);
+}
+
+body.dark-mode .table-dark {
+  --bs-table-bg: #111;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #2a2a4a;
+  color: var(--clr-text);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .form-floating > label {
+  color: #a0a0b0;
+}
+
+body.dark-mode .accordion-item {
+  background-color: var(--clr-card-bg);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .accordion-button {
+  background-color: var(--clr-card-bg);
+  color: var(--clr-text);
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: rgba(13, 110, 253, 0.15);
+  color: #6ea8fe;
+}
+
+body.dark-mode .accordion-body {
+  color: #c0c0d0;
+}
+
+body.dark-mode .modal-content {
+  background-color: var(--clr-card-bg);
+  color: var(--clr-text);
+}
+
+body.dark-mode .alert-info {
+  background-color: rgba(13, 202, 240, 0.1);
+  color: #6edff6;
+  border-color: rgba(13, 202, 240, 0.2);
+}
+
+body.dark-mode #darkModeToggle .bi::before {
+  content: "\F5A2"; /* sun icon */
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .navbar,
+  footer,
+  .back-to-top,
+  .toast-container,
+  #hero,
+  #darkModeToggle,
+  #loginBtn,
+  #userInfo {
+    display: none !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    padding: 1rem 0;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+}
+
+/* ========================================
+   RESPONSIVE TWEAKS
+   ======================================== */
+@media (max-width: 767.98px) {
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+
+  .carousel-caption .btn {
+    display: none;
+  }
+
+  .countdown-box {
+    min-width: 70px;
+    padding: 0.75rem 1rem;
+  }
+
+  .countdown-number {
+    font-size: 1.75rem;
+  }
+
+  .gallery-img {
+    height: 150px;
+  }
+
+  section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .countdown-box {
+    min-width: 60px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .countdown-number {
+    font-size: 1.4rem;
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+  }
+}

@@ -42,6 +42,18 @@ No new HTML tags today! Instead, here are the **JavaScript concepts** you'll lea
 | `onclick` | Runs a function when an element is clicked | `onclick="doSomething()"` |
 | `if / else` | Makes decisions based on conditions | `if (age >= 18) { }` |
 
+While this session focuses on JavaScript, our code also uses a few **new Bootstrap classes** and one key **HTML element**:
+
+| Concept | What It Does | Example |
+|---------|-------------|---------|
+| `<script>` | HTML tag that contains or links JavaScript code | `<script> ... </script>` |
+| `btn-outline-primary` | Outlined (not filled) primary-colored button | `class="btn btn-outline-primary"` |
+| `btn-success` | Green filled button for positive/success actions | `class="btn btn-success"` |
+| `text-muted` | Light gray text color for secondary information | `class="text-muted"` |
+| `text-primary` | Primary blue text color | `class="text-primary"` |
+| `fs-1` | Font size level 1 — largest (2.5rem) | `class="fs-1"` |
+| `fs-5` | Font size level 5 — slightly larger than default (1.25rem) | `class="fs-5"` |
+
 ---
 
 ## 📖 What is JavaScript?
@@ -410,6 +422,8 @@ Right **after** the hero carousel section and **before** the about section, add 
 
 📌 **Why do we add this?** JavaScript will find this element by its `id` and change its text to show the visitor's name.
 
+📌 **Bootstrap classes used:** `text-center` centers text (from Session 2), `text-muted` makes it light gray (new!), `fs-5` sets font size to 1.25rem (new!), and `my-3` adds 1rem vertical margin (spacing pattern from Session 3). The `id="welcomeMessage"` attribute gives JavaScript a handle to find this element.
+
 ### Step 3: Wrap Info Cards and Add Toggle Button
 
 Find your three info cards (Vision, Mission, Values). Add a toggle button above them, and wrap the cards row with `id="infoCards"`:
@@ -426,6 +440,8 @@ Find your three info cards (Vision, Mission, Values). Add a toggle button above 
 
 ### Step 4: Add a Click Counter Section
 
+📌 **New class — `btn-outline-primary`:** Unlike `btn-primary` (solid blue fill from Session 2), `btn-outline-primary` creates a button with a blue border and transparent background that fills with blue on hover. The `mb-3` adds 1rem bottom margin (spacing pattern from Session 3). The `row g-4` classes (from Session 3) create a flex grid row with 1.5rem gutters.
+
 Right **after** the about section, add this small section:
 
 ```html
@@ -438,6 +454,8 @@ Right **after** the about section, add this small section:
 ```
 
 ### Step 5: Add the `<script>` Tag
+
+📌 **Bootstrap classes used:** `btn-success` creates a green button (new this session) for positive actions like "Click Me!". `btn-lg` (from Session 2) makes it larger. `mt-2` adds 0.5rem top margin, `fs-5` sets font to 1.25rem, and `text-primary` colors the counter text Bootstrap blue — all new this session.
 
 Add a `<script>` tag just **before** the Bootstrap JS CDN link at the bottom of `<body>`. This is where ALL our JavaScript goes.
 
@@ -829,6 +847,112 @@ name(value);                           // Call
 
 ---
 
+### Bootstrap Classes Used in Code
+
+> 📌 The full code recap includes all classes from Sessions 1–3. New classes for **this session** are marked with ⭐.
+
+**⭐ New in This Session:**
+
+| Class | Purpose |
+|-------|---------|
+| `btn-outline-primary` | Outlined primary button — blue border, transparent background, fills on hover |
+| `btn-success` | Green filled button for positive/success actions |
+| `text-muted` | Light gray text color for secondary, de-emphasized information |
+| `text-primary` | Primary blue text color |
+| `fs-1` | Font size level 1 (2.5rem) — the largest Bootstrap font size |
+| `fs-5` | Font size level 5 (1.25rem) — slightly larger than default body text |
+
+**Spacing Utilities (pattern from Session 3, new values used here):**
+
+| Pattern | Values Used in Code | Meaning |
+|---------|-------------------|---------|
+| `mt-{n}` | `mt-2`, `mt-3`, `mt-5` | Margin-top: 0.5rem, 1rem, 3rem |
+| `mb-{n}` | `mb-0`, `mb-3`, `mb-4`, `mb-5` | Margin-bottom: 0, 1rem, 1.5rem, 3rem |
+| `my-{n}` | `my-3`, `my-4` | Margin top + bottom: 1rem, 1.5rem |
+| `py-{n}` | `py-3`, `py-5` | Padding top + bottom: 1rem, 3rem |
+
+**From Previous Sessions (in full code recap):**
+
+| Category | Classes | Session |
+|----------|---------|---------|
+| Navbar | `navbar`, `navbar-expand-lg`, `navbar-dark`, `navbar-brand`, `navbar-toggler`, `navbar-toggler-icon`, `navbar-collapse`, `navbar-nav`, `nav-item`, `nav-link`, `active`, `sticky-top`, `collapse` | 1 |
+| Dropdown | `dropdown`, `dropdown-toggle`, `dropdown-menu`, `dropdown-item`, `dropdown-divider` | 1 |
+| Carousel | `carousel`, `slide`, `carousel-indicators`, `carousel-inner`, `carousel-item`, `carousel-control-prev`, `carousel-control-next`, `carousel-control-prev-icon`, `carousel-control-next-icon`, `visually-hidden` | 2 |
+| Layout | `container`, `ms-auto`, `d-flex`, `flex-column`, `justify-content-center`, `align-items-center`, `h-100` | 1–2 |
+| Grid | `row`, `col-md-4`, `col-md-6`, `g-4`, `align-items-center` | 3 |
+| Text | `text-center`, `text-white`, `text-success`, `text-danger`, `fw-bold`, `lead`, `display-4` | 1–3 |
+| Buttons | `btn`, `btn-light`, `btn-lg` | 2 |
+| Backgrounds | `bg-dark`, `bg-primary`, `bg-success` | 1–2 |
+| Cards | `card`, `card-body`, `card-title`, `card-text`, `h-100`, `shadow`, `shadow-sm` | 3 |
+| Images | `img-fluid`, `rounded` | 3 |
+| Icons | `bi`, `bi-mortarboard-fill`, `bi-eye-fill`, `bi-rocket-takeoff-fill`, `bi-heart-fill` | 1–3 |
+
+### HTML Elements in Code
+
+| Tag | Purpose | Session |
+|-----|---------|---------|
+| `<script>` | Contains or links JavaScript code — **new this session** | **4** |
+| `<button>` | Clickable element, used with `onclick` for JS events | 1 |
+| `<!DOCTYPE html>` | Declares the document as HTML5 | 1 |
+| `<html>` | Root element of the page | 1 |
+| `<head>`, `<meta>`, `<title>`, `<link>` | Document metadata, charset, page title, stylesheets | 1 |
+| `<body>` | Contains all visible page content | 1 |
+| `<nav>` | Semantic navigation container | 1 |
+| `<div>` | Generic container for layout | 1 |
+| `<a>` | Hyperlink / anchor element | 1 |
+| `<span>` | Inline container | 1 |
+| `<ul>`, `<li>` | Unordered list and list items | 1 |
+| `<hr>` | Horizontal rule / divider | 1 |
+| `<section>` | Semantic section of content | 3 |
+| `<h1>`, `<h2>`, `<h5>` | Heading levels | 1 |
+| `<p>` | Paragraph | 1 |
+| `<img>` | Image element | 3 |
+| `<i>` | Used for Bootstrap Icons | 1 |
+| `<footer>` | Semantic page footer | 3 |
+
+### HTML Attributes in Code
+
+| Attribute | Purpose | Example |
+|-----------|---------|---------|
+| `id` | Unique identifier — required for `getElementById()` | `id="welcomeMessage"` |
+| `class` | Assigns CSS / Bootstrap classes to an element | `class="btn btn-success"` |
+| `onclick` | Runs a JavaScript function on click | `onclick="toggleCards()"` |
+| `src` | Source URL for scripts or images | `<script src="...">`, `<img src="...">` |
+| `href` | Hyperlink destination or stylesheet URL | `<a href="#about">`, `<link href="...">` |
+| `rel` | Relationship between document and linked resource | `rel="stylesheet"` |
+| `alt` | Alternative text for images (accessibility) | `alt="BCA Department"` |
+| `type` | Specifies the type of a `<button>` or `<input>` | `type="button"` |
+| `style` | Applies inline CSS directly to an element | `style="min-height: 350px;"` |
+| `lang` | Specifies the language of the document | `lang="en"` |
+| `charset` | Character encoding of the document | `charset="UTF-8"` |
+| `name` / `content` | Used in `<meta>` tags for metadata | `name="viewport" content="..."` |
+| `role` | ARIA role for accessibility | `role="button"` |
+
+### Data & ARIA Attributes (from Sessions 1–2)
+
+| Attribute | Purpose |
+|-----------|---------|
+| `data-bs-toggle` | Triggers Bootstrap behavior (`"collapse"`, `"dropdown"`) |
+| `data-bs-target` | Specifies which element to toggle (e.g., `"#mainNav"`) |
+| `data-bs-ride` | Auto-starts component behavior (`"carousel"`) |
+| `data-bs-slide-to` | Jumps to specific carousel slide number |
+| `data-bs-slide` | Navigates carousel (`"prev"` / `"next"`) |
+| `aria-controls` | Identifies the element this control targets |
+| `aria-expanded` | Indicates whether a collapsible is currently open |
+| `aria-label` | Provides an accessible text label |
+| `aria-current` | Marks the current item (e.g., active carousel indicator) |
+| `aria-hidden` | Hides decorative elements from screen readers |
+
+### CSS Properties in Code
+
+| Property | Value(s) Used | Context |
+|----------|--------------|---------|
+| `min-height` | `350px` | Inline style on carousel slides (from Session 2) |
+| `display` | `none`, `block`, `flex` | Set via JS `.style.display` to show/hide elements |
+| `background-color` | Any CSS color | Set via JS `.style.backgroundColor` (Challenge 2) |
+
+---
+
 ## 📝 Key Takeaways
 
 1. **JavaScript is the programming language of the web** — it adds behavior and interactivity.
@@ -863,6 +987,8 @@ Add a button below the click counter that says **"Change Navbar Color"**. When c
 1. Add an `id` to the `<nav>` tag
 2. Use `document.getElementById("navId").style.backgroundColor = "blue";`
 3. Create a function and connect it with `onclick`
+
+📌 **New DOM property — `.style.backgroundColor`:** This is the JavaScript way to set the CSS property `background-color`. In JavaScript, CSS properties with hyphens use camelCase instead: `background-color` → `backgroundColor`, `font-size` → `fontSize`, `margin-top` → `marginTop`.
 
 ### Challenge 3: Auto-Reset Counter (Medium)
 Modify the click counter so that it **resets back to 0 after reaching 10 clicks**. When it resets, show an alert: `"Counter reset! You clicked 10 times!"`.

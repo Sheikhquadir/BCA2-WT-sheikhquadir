@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<!--
+  📋 BOOTSTRAP LEARNING TEMPLATE — BCA 2025-26 Crash Course
+  ============================================================
+  This is the STRIPPED version of index.html for hands-on Bootstrap learning.
+  ALL Bootstrap classes and data-bs-* attributes have been removed from every element.
+
+  YOUR TASK:
+  Add Bootstrap classes (and data-bs-* attributes) back — one section at a time —
+  to recreate the fully-styled page you can preview in index.html.
+
+  HOW TO USE THIS FILE:
+  1. Open both template.html (this file) and index.html in your browser side by side.
+  2. Pick one section (e.g., the Navbar).
+  3. Study the Bootstrap classes used in index.html for that section.
+  4. Add those same classes to the matching elements in THIS file.
+  5. Save and refresh your browser to see the effect.
+  6. Move to the next section and repeat.
+
+  BOOTSTRAP 5 QUICK REFERENCE:
+  - Layout & Grid   : https://getbootstrap.com/docs/5.3/layout/grid/
+  - Navbar          : https://getbootstrap.com/docs/5.3/components/navbar/
+  - Carousel        : https://getbootstrap.com/docs/5.3/components/carousel/
+  - Cards           : https://getbootstrap.com/docs/5.3/components/card/
+  - Buttons         : https://getbootstrap.com/docs/5.3/components/buttons/
+  - Forms           : https://getbootstrap.com/docs/5.3/forms/overview/
+  - Modal           : https://getbootstrap.com/docs/5.3/components/modal/
+  - Accordion       : https://getbootstrap.com/docs/5.3/components/accordion/
+  - Tables          : https://getbootstrap.com/docs/5.3/content/tables/
+  - Bootstrap Icons : https://icons.getbootstrap.com/
+  - Completed file  : index.html (same folder — use as reference)
+  - Official site   : https://meu.edu.in
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Batch 2025-26 — Our Class Website</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS (after Bootstrap) -->
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav id="mainNav">
+    <div>
+      <a href="#">
+        <i></i>BCA 2025-26
+      </a>
+      <button type="button"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+      </button>
+
+      <div id="navbarContent">
+        <ul>
+          <li>
+            <a href="#hero">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#faculty">Faculty</a>
+          </li>
+          <li>
+            <a href="#timetable">Timetable</a>
+          </li>
+          <li>
+            <a href="#gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+          <li>
+            <a href="#faq">FAQ</a>
+          </li>
+          <li>
+            <a href="#" role="button" aria-expanded="false">
+              Resources
+            </a>
+            <ul>
+              <li><a href="#">Syllabus PDF</a></li>
+              <li><a href="#">Previous Year Papers</a></li>
+              <li><a href="#">Study Material</a></li>
+              <li><hr></li>
+              <li><a href="#">University Portal</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div>
+          <!--
+            ╔══════════════════════════════════════════════════════════════╗
+            ║  📌 TASK — JavaScript: Color Theme Switching (Dark Mode)     ║
+            ╚══════════════════════════════════════════════════════════════╝
+            This button switches the website between Light Mode and Dark Mode.
+
+            STEP 1 ▶ Give this button an id (e.g., id="darkModeToggle")
+                      and add Bootstrap classes to style it as a small
+                      outline-light button  (btn btn-outline-light btn-sm)
+
+            STEP 2 ▶ Inside the <i> tag, add Bootstrap Icons class for the
+                      moon icon: class="bi bi-moon-stars-fill"
+
+            STEP 3 ▶ Write JavaScript that does the following:
+              a) Gets a reference to this button using getElementById()
+              b) When the button is CLICKED:
+                   - Toggle the CSS class "dark-mode" on document.body
+                     using: document.body.classList.toggle('dark-mode')
+                   - If dark mode is ON → change the <i> icon to "bi-sun-fill"
+                   - If dark mode is OFF → change it back to "bi-moon-stars-fill"
+                   - Save the user's choice to localStorage:
+                     localStorage.setItem('bcaDarkMode', 'true' or 'false')
+              c) On page load, READ the saved preference from localStorage
+                 and apply it immediately so the theme is remembered.
+
+            HOW IT WORKS ▶ The CSS file (css/custom.css) already has all the
+              dark-mode styles under the selector  body.dark-mode { ... }
+              Your JavaScript just needs to add/remove that class!
+
+            REFERENCE ▶ See Section 11 in js/script.js for a working example.
+          -->
+          <!-- Dark Mode Toggle -->
+          <button title="Toggle Dark Mode">
+            <i></i>
+          </button>
+
+          <!-- Login Button -->
+          <button id="loginBtn">
+            <i></i>Login
+          </button>
+
+          <!-- Logged-in User (hidden by default) -->
+          <div id="userInfo">
+            <span id="userName"></span>
+            <button id="logoutBtn">
+              <i></i>Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================
+         HERO SECTION — Bootstrap Carousel
+         ============================================ -->
+    <section id="hero">
+      <div id="heroCarousel">
+        <!-- Indicators -->
+        <div>
+          <button type="button"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" aria-label="Slide 2"></button>
+          <button type="button" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Slides -->
+        <div>
+          <div>
+            <img src="https://placehold.co/1200x500/1a3c5e/ffffff?text=Campus+View+%E2%80%94+Add+Your+Photo" alt="Campus View">
+            <div>
+              <h1>Welcome to BCA 2025-26</h1>
+              <p>Mandsaur University — Department of Computer Applications</p>
+              <a href="#about">Explore Our Department</a>
+            </div>
+          </div>
+          <div>
+            <img src="https://placehold.co/1200x500/2e5e3a/ffffff?text=Computer+Lab+%E2%80%94+Add+Your+Photo" alt="Computer Lab">
+            <div>
+              <h1>State-of-the-Art Labs</h1>
+              <p>Modern computer labs equipped with the latest technology</p>
+              <a href="#gallery">View Gallery</a>
+            </div>
+          </div>
+          <div>
+            <img src="https://placehold.co/1200x500/5e3a1a/ffffff?text=Students+%E2%80%94+Add+Your+Photo" alt="Students">
+            <div>
+              <h1>Shape Your Future</h1>
+              <p>Learn from industry experts and build real-world skills</p>
+              <a href="#contact">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button type="button">
+          <span aria-hidden="true"></span>
+          <span>Previous</span>
+        </button>
+        <button type="button">
+          <span aria-hidden="true"></span>
+          <span>Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT OUR DEPARTMENT
+         ============================================ -->
+    <section id="about">
+      <div>
+        <h2>
+          <i></i>About Our Department
+        </h2>
+
+        <!-- Two-column layout -->
+        <div>
+          <div>
+            <h3>Department of Computer Applications</h3>
+            <p>
+              Education is evolving at a faster pace than any other period in recent history. The curriculum at the
+              Faculty of Computer Science &amp; Applications is aligned as per the industry's requirement to meet
+              tomorrow's challenges for the budding engineers and technocrats. Our dedicated team of faculty members
+              are skilled to solve tough problems, collaborate effectively, and express ideas in innovative ways.
+            </p>
+            <p>
+              The Faculty comprises of departments — BCA, BCA (Cloud Computing), and BCA (Cyber Security and
+              System Administration). Our curriculum focuses on practical exposure, industry-aligned syllabus,
+              problem-solving, and coding. We use Google Classroom as our LMS with 1000+ videos and study
+              materials. Various MoUs have been established with the industry.
+            </p>
+            <ul>
+              <li><i></i>Established under M.P. Act No. 17 of 2015</li>
+              <li><i></i>80+ Companies Visit Campus Yearly for Recruitment</li>
+              <li><i></i>Thrust Areas: AI, IoT, Electric Vehicle, Robotics &amp; Automation</li>
+              <li><i></i>Google Classroom LMS with 1000+ Videos</li>
+            </ul>
+          </div>
+          <div>
+            <img src="https://placehold.co/500x350/1a3c5e/ffffff?text=Department+Building+%E2%80%94+Add+Photo"
+              alt="Department of Computer Applications">
+          </div>
+        </div>
+
+        <!-- Info Cards: Vision, Mission, Values -->
+        <div>
+          <div>
+            <article>
+              <div>
+                <i></i>
+                <h5>Our Vision</h5>
+                <p>
+                  To be a globally recognized institution that fosters innovation, cultivates leaders,
+                  and inspires a passion for lifelong learning, empowering our diverse community to
+                  address the challenges of the 21st century with knowledge, integrity, and commitment
+                  to positive societal impact.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div>
+            <article>
+              <div>
+                <i></i>
+                <h5>Our Mission</h5>
+                <p>
+                  {Mission-Statement — Visit <a href="https://meu.edu.in/vision-mission/" target="_blank">meu.edu.in/vision-mission</a> for the official Mission statement}
+                </p>
+              </div>
+            </article>
+          </div>
+          <div>
+            <article>
+              <div>
+                <i></i>
+                <h5>Our Values</h5>
+                <p>
+                  {Values-Statement — Students should add the department's or university's core values here}
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FACULTY & STAFF
+         ============================================ -->
+    <section id="faculty">
+      <div>
+        <h2>
+          <i></i>Faculty &amp; Staff
+        </h2>
+        <p>
+          Meet the dedicated educators guiding BCA 2025-26
+          <span id="expandedCount"
+            title="Faculty bios expanded">0 expanded</span>
+        </p>
+
+        <!-- 
+          ⚠️ PLACEHOLDER FACULTY CARDS
+          Students: Replace {Faculty-N-Name}, {Faculty-N-Designation}, {Faculty-N-Subject},
+          and {Faculty-N-Bio} with real faculty details from your department.
+          Visit https://meu.edu.in/faculty-of-computer-science-and-application/ for reference.
+        -->
+        <div>
+          <!-- Faculty 1 -->
+          <div>
+            <article>
+              <img src="https://placehold.co/400x300/dee2e6/495057?text=Faculty+1+Photo" alt="{Faculty-1-Name}">
+              <div>
+                <h5>{Faculty-1-Name}</h5>
+                <p>{Faculty-1-Designation}</p>
+                <span
+                  title="{Faculty-1-Subject}">{Faculty-1-Subject}</span>
+                <p>
+                  {Faculty-1-Bio — Add a brief professional biography of the faculty member here.
+                  Include their qualifications, experience, and areas of expertise.}
+                </p>
+                <button>Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 2 -->
+          <div>
+            <article>
+              <img src="https://placehold.co/400x300/dee2e6/495057?text=Faculty+2+Photo" alt="{Faculty-2-Name}">
+              <div>
+                <h5>{Faculty-2-Name}</h5>
+                <p>{Faculty-2-Designation}</p>
+                <span
+                  title="{Faculty-2-Subject}">{Faculty-2-Subject}</span>
+                <p>
+                  {Faculty-2-Bio — Add a brief professional biography of the faculty member here.
+                  Include their qualifications, experience, and areas of expertise.}
+                </p>
+                <button>Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 3 -->
+          <div>
+            <article>
+              <img src="https://placehold.co/400x300/dee2e6/495057?text=Faculty+3+Photo" alt="{Faculty-3-Name}">
+              <div>
+                <h5>{Faculty-3-Name}</h5>
+                <p>{Faculty-3-Designation}</p>
+                <span
+                  title="{Faculty-3-Subject}">{Faculty-3-Subject}</span>
+                <p>
+                  {Faculty-3-Bio — Add a brief professional biography of the faculty member here.
+                  Include their qualifications, experience, and areas of expertise.}
+                </p>
+                <button>Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 4 -->
+          <div>
+            <article>
+              <img src="https://placehold.co/400x300/dee2e6/495057?text=Faculty+4+Photo" alt="{Faculty-4-Name}">
+              <div>
+                <h5>{Faculty-4-Name}</h5>
+                <p>{Faculty-4-Designation}</p>
+                <span
+                  title="{Faculty-4-Subject}">{Faculty-4-Subject}</span>
+                <p>
+                  {Faculty-4-Bio — Add a brief professional biography of the faculty member here.
+                  Include their qualifications, experience, and areas of expertise.}
+                </p>
+                <button>Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 5 -->
+          <div>
+            <article>
+              <img src="https://placehold.co/400x300/dee2e6/495057?text=Faculty+5+Photo" alt="{Faculty-5-Name}">
+              <div>
+                <h5>{Faculty-5-Name}</h5>
+                <p>{Faculty-5-Designation}</p>
+                <span
+                  title="{Faculty-5-Subject}">{Faculty-5-Subject}</span>
+                <p>
+                  {Faculty-5-Bio — Add a brief professional biography of the faculty member here.
+                  Include their qualifications, experience, and areas of expertise.}
+                </p>
+                <button>Read More</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Faculty 6 -->
+          <div>
+            <article>
+              <img src="https://placehold.co/400x300/dee2e6/495057?text=Faculty+6+Photo" alt="{Faculty-6-Name}">
+              <div>
+                <h5>{Faculty-6-Name}</h5>
+                <p>{Faculty-6-Designation}</p>
+                <span
+                  title="{Faculty-6-Subject}">{Faculty-6-Subject}</span>
+                <p>
+                  {Faculty-6-Bio — Add a brief professional biography of the faculty member here.
+                  Include their qualifications, experience, and areas of expertise.}
+                </p>
+                <button>Read More</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CLASS TIMETABLE
+         ============================================ -->
+    <section id="timetable">
+      <div>
+        <h2>
+          <i></i>Class Timetable
+        </h2>
+        <p>BCA Semester II — Weekly Schedule</p>
+
+        <!-- Today's Classes Summary -->
+        <div id="todayClasses">
+          <i></i> <strong>Today's Classes:</strong>
+          <span id="todaySummary">Loading...</span>
+        </div>
+
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>9:00–10:00</th>
+                <th>10:00–11:00</th>
+                <th>11:00–12:00</th>
+                <th>12:00–1:00</th>
+                <th>1:00–2:00</th>
+                <th>2:00–3:00</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-day="Monday">
+                <td>Monday</td>
+                <td>Web Technology</td>
+                <td>Data Structures</td>
+                <td>Mathematics-II</td>
+                <td>Lunch Break</td>
+                <td>DBMS Lab</td>
+                <td>DBMS Lab</td>
+              </tr>
+              <tr data-day="Tuesday">
+                <td>Tuesday</td>
+                <td>Data Structures</td>
+                <td>Operating Systems</td>
+                <td>Web Technology</td>
+                <td>Lunch Break</td>
+                <td>Web Tech Lab</td>
+                <td>Web Tech Lab</td>
+              </tr>
+              <tr data-day="Wednesday">
+                <td>Wednesday</td>
+                <td>DBMS</td>
+                <td>Mathematics-II</td>
+                <td>Operating Systems</td>
+                <td>Lunch Break</td>
+                <td>DS Lab</td>
+                <td>DS Lab</td>
+              </tr>
+              <tr data-day="Thursday">
+                <td>Thursday</td>
+                <td>Mathematics-II</td>
+                <td>Web Technology</td>
+                <td>Data Structures</td>
+                <td>Lunch Break</td>
+                <td>DBMS Lab</td>
+                <td>DBMS Lab</td>
+              </tr>
+              <tr data-day="Friday">
+                <td>Friday</td>
+                <td>Operating Systems</td>
+                <td>DBMS</td>
+                <td>Web Technology</td>
+                <td>Lunch Break</td>
+                <td>Web Tech Lab</td>
+                <td>Web Tech Lab</td>
+              </tr>
+              <tr data-day="Saturday">
+                <td>Saturday</td>
+                <td>Data Structures</td>
+                <td>Mathematics-II</td>
+                <td>Library / Self Study</td>
+                <td>Lunch Break</td>
+                <td colspan="2">Sports / Extra-Curricular</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PHOTO GALLERY
+         ============================================ -->
+    <section id="gallery">
+      <div>
+        <h2>
+          <i></i>Photo Gallery
+        </h2>
+
+        <!-- ⚠️ PLACEHOLDER IMAGES — Students: Replace these URLs with actual campus photos -->
+        <div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/1a3c5e/ffffff?text=Campus+Main+Gate"
+                alt="Campus Main Gate" data-caption="Campus Main Gate">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/2e5e3a/ffffff?text=Computer+Lab"
+                alt="Computer Lab" data-caption="Computer Lab — Hands-on Learning">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/5e3a1a/ffffff?text=Central+Library"
+                alt="Library" data-caption="Central Library">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/3a1a5e/ffffff?text=Smart+Classroom"
+                alt="Classroom" data-caption="Smart Classroom">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/1a5e5e/ffffff?text=Seminar+Hall"
+                alt="Seminar Hall" data-caption="Seminar Hall — Guest Lectures">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/5e5e1a/ffffff?text=Sports+Ground"
+                alt="Sports Ground" data-caption="Sports Ground">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/1a3c5e/ffffff?text=Annual+Function"
+                alt="Annual Function" data-caption="Annual Function 2025">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/2e5e3a/ffffff?text=Workshop"
+                alt="Workshop" data-caption="Web Development Workshop">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/5e3a1a/ffffff?text=Placement+Drive"
+                alt="Placement Drive" data-caption="Campus Placement Drive">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/3a1a5e/ffffff?text=University+Canteen"
+                alt="Canteen" data-caption="University Canteen">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/1a5e5e/ffffff?text=Student+Hostel"
+                alt="Hostel" data-caption="Student Hostel">
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <img src="https://placehold.co/400x300/5e5e1a/ffffff?text=Farewell+Ceremony"
+                alt="Farewell" data-caption="Farewell Ceremony 2025">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Lightbox Modal -->
+      <div id="galleryModal" tabindex="-1" aria-label="Gallery Lightbox" aria-hidden="true">
+        <div>
+          <div>
+            <div>
+              <h5 id="galleryCaption">Image</h5>
+              <button type="button" aria-label="Close"></button>
+            </div>
+            <div>
+              <img src="" id="galleryModalImg" alt="Gallery Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT / FEEDBACK FORM
+         ============================================ -->
+    <section id="contact">
+      <div>
+        <h2>
+          <i></i>Contact &amp; Feedback
+        </h2>
+
+        <div>
+          <div>
+            <form id="contactForm" novalidate>
+              <div>
+                <!-- Name -->
+                <div>
+                  <div>
+                    <input type="text" id="formName" placeholder="Full Name" required
+                      minlength="2">
+                    <label for="formName">Full Name</label>
+                    <div>Please enter your full name (at least 2 characters).</div>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <div>
+                    <input type="email" id="formEmail" placeholder="Email" required>
+                    <label for="formEmail">Email Address</label>
+                    <div>Please enter a valid email address.</div>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                  <div>
+                    <input type="tel" id="formPhone" placeholder="Phone" required
+                      pattern="^(\+91[\-\s]?)?[6-9]\d{9}$">
+                    <label for="formPhone">Phone (+91)</label>
+                    <div>Enter a valid Indian phone number (e.g., +91 9876543210).</div>
+                  </div>
+                </div>
+
+                <!-- Subject Dropdown -->
+                <div>
+                  <div>
+                    <select id="formSubject" required>
+                      <option value="" selected disabled>Choose...</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Admission Query">Admission Query</option>
+                      <option value="Feedback">Feedback</option>
+                      <option value="Complaint">Complaint</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <label for="formSubject">Subject</label>
+                    <div>Please select a subject.</div>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <div>
+                    <textarea id="formMessage" placeholder="Message" style="height: 120px"
+                      required minlength="10"></textarea>
+                    <label for="formMessage">Your Message</label>
+                    <div>Please enter at least 10 characters.</div>
+                  </div>
+                </div>
+
+                <!-- Gender Radio -->
+                <div>
+                  <label>Gender</label>
+                  <div>
+                    <div>
+                      <input type="radio" name="gender" id="genderMale" value="Male"
+                        required>
+                      <label for="genderMale">Male</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="gender" id="genderFemale" value="Female">
+                      <label for="genderFemale">Female</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="gender" id="genderOther" value="Other">
+                      <label for="genderOther">Other</label>
+                    </div>
+                    <div>Please select your gender.</div>
+                  </div>
+                </div>
+
+                <!-- Interests Checkboxes -->
+                <div>
+                  <label>Interests</label>
+                  <div>
+                    <div>
+                      <input type="checkbox" id="intWebDev" value="Web Development">
+                      <label for="intWebDev">Web Dev</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="intDB" value="Database">
+                      <label for="intDB">Database</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="intNetwork" value="Networking">
+                      <label for="intNetwork">Networking</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="intAI" value="AI/ML">
+                      <label for="intAI">AI/ML</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Agree Checkbox -->
+                <div>
+                  <div>
+                    <input type="checkbox" id="formAgree" required>
+                    <label for="formAgree">
+                      I agree that the information provided is correct and consent to being contacted.
+                    </label>
+                    <div>You must agree before submitting.</div>
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <div>
+                  <button type="submit">
+                    <i></i>Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Success Alert (hidden) -->
+            <div id="formSuccess">
+              <i></i>
+              Thank you! Your message has been saved successfully.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         LOGIN MODAL
+         ============================================ -->
+    <div id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div>
+        <div>
+          <div>
+            <h5 id="loginModalLabel">
+              <i></i>Admin Login
+            </h5>
+            <button type="button" aria-label="Close"></button>
+          </div>
+          <div>
+            <div id="loginError">
+              <i></i>Invalid email or password.
+            </div>
+            <div id="loginSuccess">
+              <i></i>Login successful! Redirecting...
+            </div>
+            <form id="loginForm">
+              <div>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <label for="loginEmail">Email</label>
+              </div>
+              <div>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <label for="loginPassword">Password</label>
+              </div>
+              <p>
+                <i></i>Default: admin@bca.mu / bca2025
+              </p>
+              <button type="submit">
+                <i></i>Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         ADMIN MESSAGES SECTION (hidden by default)
+         ============================================ -->
+    <section id="adminMessages">
+      <div>
+        <h2>
+          <i></i>Contact Messages (Admin)
+        </h2>
+        <div>
+          <div>
+            <div id="messagesList">
+              <p>No messages yet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FAQ ACCORDION
+         ============================================ -->
+    <section id="faq">
+      <div>
+        <h2>
+          <i></i>Frequently Asked Questions
+        </h2>
+
+        <div>
+          <div>
+            <div id="faqAccordion">
+              <!-- FAQ 1 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="true" aria-controls="faq1">
+                    What is the duration of the BCA programme?
+                  </button>
+                </h3>
+                <div id="faq1">
+                  <div>
+                    The Bachelor of Computer Applications (BCA) programme at Mandsaur University is a
+                    <strong>3-year undergraduate degree</strong> divided into 6 semesters. Each semester
+                    includes theory subjects, practical labs, and internal assessments.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq2">
+                    What are the eligibility criteria for BCA admission?
+                  </button>
+                </h3>
+                <div id="faq2">
+                  <div>
+                    Candidates must have passed 10+2 (or equivalent) from a recognised board.
+                    <strong>{Eligibility-Criteria — Check the official admission page at
+                    <a href="https://meu.edu.in/bachelor-of-computer-application/" target="_blank">meu.edu.in/bachelor-of-computer-application</a>
+                    for specific subject and percentage requirements.}</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq3">
+                    What subjects are taught in Semester II?
+                  </button>
+                </h3>
+                <div id="faq3">
+                  <div>
+                    Semester II covers: <strong>Data Structures, Web Technology, Database Management Systems (DBMS),
+                    Operating Systems, and Mathematics-II</strong>. Each subject has corresponding practical labs.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq4">
+                    Is there a placement cell at the university?
+                  </button>
+                </h3>
+                <div id="faq4">
+                  <div>
+                    Yes! Mandsaur University has a <strong>dedicated Training &amp; Placement Cell</strong>
+                    that organises campus drives, mock interviews, resume-building workshops, and industry
+                    visits. More than <strong>80+ companies</strong> visit the campus every year from various
+                    sectors to recruit industry-ready students.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq5">
+                    What programming languages will I learn?
+                  </button>
+                </h3>
+                <div id="faq5">
+                  <div>
+                    During the BCA programme, you will learn <strong>C, C++, Java, Python, HTML/CSS/JavaScript,
+                    SQL</strong>, and more. The curriculum is updated regularly to include trending technologies.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 6 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq6">
+                    Are hostel facilities available?
+                  </button>
+                </h3>
+                <div id="faq6">
+                  <div>
+                    Yes, separate hostel facilities are available for boys and girls within the campus.
+                    Hostels are equipped with Wi-Fi, mess, laundry, and 24/7 security.
+                    <strong>{Hostel-Fee — Contact the admission office or visit
+                    <a href="https://meu.edu.in" target="_blank">meu.edu.in</a> for current hostel fee details.}</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 7 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq7">
+                    Can I pursue MCA after BCA?
+                  </button>
+                </h3>
+                <div id="faq7">
+                  <div>
+                    Absolutely! BCA graduates are eligible to pursue <strong>MCA (Master of Computer
+                    Applications)</strong>, MBA, or other postgraduate programmes. Many students also
+                    opt for specialised certifications in cloud computing, data science, or cybersecurity.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 8 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq8">
+                    What is the fee structure?
+                  </button>
+                </h3>
+                <div id="faq8">
+                  <div>
+                    <strong>{Tuition-Fee — Visit <a href="https://meu.edu.in/bachelor-of-computer-application/" target="_blank">meu.edu.in/bachelor-of-computer-application</a>
+                    or contact the admission office for the current BCA fee structure.}</strong>
+                    Scholarships are available for meritorious students and those from economically
+                    weaker sections.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 9 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq9">
+                    Are there extracurricular activities?
+                  </button>
+                </h3>
+                <div id="faq9">
+                  <div>
+                    The university organises various events including <strong>hackathons, coding contests,
+                    tech fests, cultural programmes, and sports tournaments</strong>. There are also
+                    active clubs for coding, robotics, photography, and debating.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 10 -->
+              <div>
+                <h3>
+                  <button type="button" aria-expanded="false" aria-controls="faq10">
+                    How can I contact the department?
+                  </button>
+                </h3>
+                <div id="faq10">
+                  <div>
+                    You can reach the Faculty of Computer Science &amp; Applications via the
+                    <a href="https://meu.edu.in/faculty-of-computer-science-and-application/" target="_blank">official department page</a>.
+                    <strong>{Department-Contact — Add the verified department email and phone number here.}</strong>
+                    The university campus is located in Mandsaur, Madhya Pradesh — 458001.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         COUNTDOWN TIMER
+         ============================================ -->
+    <section id="countdown">
+      <div>
+        <h2>
+          <i></i>Days Until Semester Exam
+        </h2>
+        <div id="countdownTimer">
+          <div>
+            <span id="cdDays">00</span>
+            <span>Days</span>
+          </div>
+          <div>
+            <span id="cdHours">00</span>
+            <span>Hours</span>
+          </div>
+          <div>
+            <span id="cdMinutes">00</span>
+            <span>Minutes</span>
+          </div>
+          <div>
+            <span id="cdSeconds">00</span>
+            <span>Seconds</span>
+          </div>
+        </div>
+        <p>Exam Date: December 15, 2026</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer>
+    <div>
+      <div>
+        <!-- Quick Links -->
+        <div>
+          <h5><i></i>Quick Links</h5>
+          <ul>
+            <li><a href="#about">About Department</a></li>
+            <li><a href="#faculty">Faculty &amp; Staff</a></li>
+            <li><a href="#timetable">Class Timetable</a></li>
+            <li><a href="#gallery">Photo Gallery</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#faq">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h5><i></i>Contact Info</h5>
+          <ul>
+            <li>
+              <i></i>Mandsaur University, Mandsaur, MP — 458001
+            </li>
+            <li>
+              <i></i>{Department-Phone — Add verified contact number}
+            </li>
+            <li>
+              <i></i>{Department-Email — Add verified email address}
+            </li>
+            <li>
+              <i></i>Mon–Sat: 9:00 AM – 5:00 PM
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div>
+          <h5><i></i>Follow Us</h5>
+          <div>
+            <a href="https://www.facebook.com/MandsaurUniversity/" target="_blank" aria-label="Facebook"><i></i></a>
+            <a href="https://www.instagram.com/mandsauruniversity/" target="_blank" aria-label="Instagram"><i></i></a>
+            <a href="https://twitter.com/MandsaurUni" target="_blank" aria-label="Twitter"><i></i></a>
+            <a href="https://www.youtube.com/@MandsaurUniversity" target="_blank" aria-label="YouTube"><i></i></a>
+            <a href="https://www.linkedin.com/school/mandsaur-university/" target="_blank" aria-label="LinkedIn"><i></i></a>
+          </div>
+          <p>
+            Stay connected with BCA 2025-26 on social media for latest updates, events, and
+            placement news.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+      <p>
+        &copy; 2025 BCA Batch 2025-26 | Mandsaur University. Built with
+        <i></i> using Bootstrap 5.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK TO TOP BUTTON
+       ============================================ -->
+  <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  📌 TASK — JavaScript: Scroll Effect (Back-to-Top Button)    ║
+    ╚══════════════════════════════════════════════════════════════╝
+    This button appears when the user scrolls down the page and
+    smoothly scrolls back to the top when clicked.
+
+    STEP 1 ▶ Give this button an id (e.g., id="backToTop")
+              and add Bootstrap classes:  btn btn-primary back-to-top
+              ("back-to-top" is a custom class defined in css/custom.css
+              that keeps it fixed in the bottom-right corner, hidden by
+              default via opacity:0 and visibility:hidden)
+
+    STEP 2 ▶ Inside the <i> tag, add Bootstrap Icons class for an
+              up-arrow icon: class="bi bi-arrow-up"
+
+    STEP 3 ▶ Write JavaScript that does the following:
+      a) Gets a reference to this button using getElementById()
+      b) Listens for the window "scroll" event:
+           window.addEventListener('scroll', function() { ... });
+         - When window.scrollY > 300 → ADD the "show" class to the button
+           (the custom CSS rule .back-to-top.show makes it visible)
+         - When window.scrollY ≤ 300 → REMOVE the "show" class
+      c) When the button is CLICKED → smoothly scroll to the top:
+           window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    HOW IT WORKS ▶ Custom CSS already handles the animation — your
+      JavaScript just toggles the "show" class on scroll.
+      Check css/custom.css → look for  .back-to-top  and  .back-to-top.show
+
+    REFERENCE ▶ See Section 12 in js/script.js for a working example.
+  -->
+  <button aria-label="Back to top" title="Back to top">
+    <i></i>
+  </button>
+
+  <!-- ============================================
+       WELCOME TOAST
+       ============================================ -->
+  <div>
+    <div id="welcomeToast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div>
+        <i></i>
+        <strong>Welcome!</strong>
+        <small>just now</small>
+        <button type="button" aria-label="Close"></button>
+      </div>
+      <div>
+        👋 Welcome to the <strong>BCA 2025-26</strong> class website! Explore our department,
+        meet the faculty, and stay updated.
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.2 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
